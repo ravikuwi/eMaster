@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd"> 
+<sqlMap namespace="questions"> 
+ 
+    <typeAlias alias="questions" type="com.emaster.web.db.model.Questions" />
+ 
+    <resultMap id="questionsMap" class="com.emaster.web.db.model.Questions">
+        <result property="questionId" column="QUESTION_ID" />
+        <result property="questionNumber" column="QUESTION_NUMBER" />
+        <result property="questionText" column="QUESTION_TEXT" />
+        <result property="categoryId" column="CATEGORY_ID" />
+        <result property="diffId" column="DIFF_ID" />
+        <result property="questionAnswer" column="QUESTION_ANSWER" />
+        <result property="option1" column="OPTION1" />
+        <result property="option2" column="OPTION2" />
+        <result property="option3" column="OPTION3" />
+        <result property="option4" column="OPTION4" />
+        <result property="option5" column="OPTION5" />
+        <result property="explanation" column="EXPLANATION" />
+    </resultMap>
+     
+    
+     
+    <insert id="add" parameterClass="com.emaster.web.db.model.Questions" >
+        INSERT INTO questions (QUESTION_ID,QUESTION_NUMBER,QUESTION_TEXT,CATEGORY_ID,DIFF_ID,QUESTION_ANSWER,OPTION1,OPTION2,OPTION3,OPTION4,OPTION5,EXPLANATION)
+         VALUES (#questionId#,#questionNumber#,#questionText#,#categoryId#,#diffId#,#questionAnswer#,#option1#,#option2#,#option3#,#option4#,#option5#,#explanation#)
+    </insert>
+     
+
+</sqlMap>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig
+        PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+     
+    <settings useStatementNamespaces="true"/>
+        
+    <transactionManager type="JDBC">
+        <dataSource type="SIMPLE">
+          <property name="JDBC.Driver" value="com.mysql.jdbc.Driver"/>
+          <property name="JDBC.ConnectionURL"  value="jdbc:mysql://localhost:3306/emaster"/>
+          <property name="JDBC.Username" value="emaster_admin"/>
+          <property name="JDBC.Password" value="Fun1Learn_admin"/>
+        </dataSource>
+      </transactionManager>
+     
+ 
+    <sqlMap resource="db-conf/questions.xml"/>
+    
+   
+    
+ 
+</sqlMapConfig>
